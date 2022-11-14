@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
+const PORT = process.env.PORT || 3030;
 
 const mainListItems = [];
 const workListItems = [];
@@ -44,4 +45,6 @@ app.post("/", function (req, res) {
     
 });
 
-app.listen(3000);
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
+  });
